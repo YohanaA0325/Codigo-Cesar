@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cifrador Cesar</title>
+    <link href="index.css" rel="stylesheet " />
+    <script src="index.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <main>
+        <h1>  Cifrador Cesar  </h1>
+        <form id="cifrador" autocomplete="off">
+            <input id="input-original" spellcheck="false" placeholder="Ingrese el texto" type="text" name="text">
+        </form>
+        <div id="resultado"></div>
+        <div class="rango">
+            <input id="rango" type="range" value="10" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+            <output>10</output>
+        </div>
+    </main>
+    <div id="img">
+    <img style="border-radius: 10px;" src="https://i.ibb.co/cyZVtMd/Dise-o-sin-t-tulo-2.jpg" width="280" height="190">
+    </div>
+    <nav>
+        <h4><b>¿Qué es el cifrado César?</b></h4>
+        <p>
+            Es una de las técnicas de cifrado más simples y más usadas. Es un tipo de cifrado por sustitución en el que una letra en el texto original es reemplazada por otra letra que se encuentra un número fijo de posiciones más adelante en el alfabeto.
+        </p>
+    </nav> 
+    <section>
+        <h4><b>¿Cuáles son sus ventajas?</b></h4>
+        <p>
+            Uno de los métodos más fáciles de usar en criptografía y puede proporcionar una seguridad mínima a la información. Uso de solo una tecla breve en todo el proceso. Uno de los mejores métodos para usar si el sistema no puede usar ninguna técnica de codificación complicada.
+        </p>
+    </section>
+    <audio controls autoplay>
+        <source src="musica.mp3" type="audio/mp3">
+      </audio>
+</body>
+</html>

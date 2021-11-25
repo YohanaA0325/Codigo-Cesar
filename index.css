@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+:root {
+    --color-terminal: #ffffff;
+    --borde-redondo: 4px;
+}
+/* el aterisco sirve para que toda nustra pagina tenga el mismo tipo de letra que linkeamos*/
+* {
+    font-family: 'Varela Round', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://s1.gifyu.com/images/BINARYe904f0f14ea76216.gif);
+    background-size: cover;
+    color: black;
+}
+audio{
+    position: absolute;
+    margin-top: 300px;
+    opacity: 0%;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+main {
+    padding: 25px;
+    box-shadow: 8px 8px 35px 0px rgb(0 0 0 / 75%);
+    border-radius: var(--borde-redondo);
+    background-color: rgb(98, 199, 73);
+    position: absolute;
+    margin-bottom: 300px;
+}
+
+h1 {
+    margin: 0;
+}
+
+#input-original, #resultado {
+    background-color: var(--color-terminal);
+    width: -webkit-fill-available;
+}
+
+#input-original {
+    margin: 10px 0 0;
+    padding: 10px;
+    color: black;
+    border-top-left-radius: var(--borde-redondo);
+    border-top-right-radius: var(--borde-redondo);
+}
+
+#resultado {
+    height: 20px;
+    color: #c2b11c;
+    padding: 0 10px 10px;
+    border-bottom-left-radius: var(--borde-redondo);
+    border-bottom-right-radius: var(--borde-redondo);
+}
+
+.rango {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    text-align: center;
+    align-items: center;
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    border-radius: var(--borde-redondo);
+    background:var(--color-terminal);
+    margin: 0;
+    padding: 0 5px;
+    height: 20px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    cursor: pointer;
+    -webkit-appearance: none;
+    background:rgb(0, 0, 0);
+    border-radius: 50%;
+    height:10px;
+    width:10px;
+}
+nav{
+    
+    padding: 25px;
+    box-shadow: 8px 8px 35px 0px rgb(0 0 0 / 75%);
+    border-radius: var(--borde-redondo);
+    background-color: rgb(144, 141, 192);
+    width: 250px;
+    height: 250px;
+    margin-right: 250px;
+    
+}
+section{
+    
+    padding: 25px;
+    box-shadow: 8px 8px 35px 0px rgb(0 0 0 / 75%);
+    border-radius: var(--borde-redondo);
+    background-color: rgb(133, 178, 192);
+    width: 250px;
+    height: 250px;
+    margin-left: 250px;
+    
+}
+
+#img{
+    background-color: rgb(185, 122, 157);
+    padding: 20px;
+    box-shadow: 8px 8px 35px 0px rgb(0 0 0 / 75%);
+    position: absolute;
+    margin-top: 300px;
+    box-shadow: 8px 8px 35px 0px rgb(0 0 0 / 75%);
+    border-radius: var(--borde-redondo);
+}
