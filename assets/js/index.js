@@ -1,31 +1,53 @@
-const alfabeto = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-const inputOriginal = document.getElementById('input-original');
-const cifrador = document.getElementById('cifrador');
-const resultado = document.getElementById('resultado');
-const rango = document.getElementById('rango');
+window.addEventListener("load",inicio,true);
 
-const shifMessage = () => {
-    const wordArray = [...inputOriginal.value.toUpperCase()];
-    printChar(0, wordArray);
+function inicio(){
+    document.getElementById("input-original").addEventListener("keyup", function(){
+        this.value = this.value.toUpperCase();
+    }, true);
+    
+    document.getElementById("cifrar").addEventListener("click",function(){  
+        let texto = document.getElementById("input-original").value;
+        let desplazamiento = document.getElementById("desplazamiento").value;               
+        document.getElementById("input-segundo").value = cifrar2(texto, desplazamiento);
+    },true);
+    document.getElementById("descifrar").addEventListener("click",function(){  
+        let texto = document.getElementById("input-original").value;
+        let desplazamiento = document.getElementById("desplazamiento").value;                               
+        document.getElementById("input-segundo").value = descifrar(texto, desplazamiento);
+    },true);
 }
 
-const printChar = (currentLetterIndex, wordArray) => {
-    if(wordArray.length === currentLetterIndex) return;
-    inputOriginal.value = inputOriginal.value.substring(1)
-    const spanChar = document.createElement("span");
-    resultado.appendChild(spanChar);
-            const charSinCodificar = wordArray[currentLetterIndex];
-            spanChar.innerHTML = alfabeto.includes(charSinCodificar) ? 
-                alfabeto[(alfabeto.indexOf(charSinCodificar) + parseInt(rango.value)) % alfabeto.length] : 
-                charSinCodificar
-            printChar(currentLetterIndex + 1, wordArray);
-        
+function cifrar(texto, desplazamiento) {
+    if (!texto) 
+        return ''; 
+    const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    desplazamiento = (desplazamiento % 26 + 26) % 26; 
+    return texto.replace(/[A-Z]/ig, c => letras[(letras.indexOf(c) + desplazamiento) % 26]);
 }
 
-const submit = e => {
-    e.preventDefault();
-    resultado.innerHTML = '';
-    shifMessage()
+function descifrar(texto, desplazamiento) {
+    if (!texto) 
+        return ''; 
+    const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    desplazamiento = (desplazamiento % 26 - 26) % 26; 
+    return texto.replace(/[A-Z]/ig, c => letras[(letras.indexOf(c) - desplazamiento) % 26]);
 }
 
-cifrador.onsubmit = submit;
+function cifrar2(texto, desplazamiento) {
+    let resultado='';
+    let letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    desplazamiento = (desplazamiento % 26 + 26) % 26; 
+    
+    if (texto){
+        for (let i=0; i<texto.length; ++i){
+            if (letras.indexOf(texto[i])!=-1)
+            { 
+                let posicion=((letras.indexOf(texto[i])+desplazamiento) % 26);
+                resultado+=letras[posicion];
+            }
+            else
+                resultado+=texto[i]; 
+        }
+    }
+    return resultado;
+}

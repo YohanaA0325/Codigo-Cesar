@@ -2,40 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cifrador Cesar</title>
-    <link href="assets/css/index.css" rel="stylesheet " />
-    
+    <link href="assets/css/index.css" rel="stylesheet"/>
 </head>
 <body>
+    <header>
+        CODIGO CESAR 🔒
+    </header>
     <main>
-        <h1>  Cifrador Cesar  </h1>
-        <form id="cifrador" autocomplete="off">
-            <input id="input-original" spellcheck="false" placeholder="Ingrese el texto" type="text" name="text">
-        </form>
-        <div id="resultado"></div>
-        <div class="rango">
-            <input id="rango" type="range" value="10" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
-            <output>10</output>
-        </div>
+        <h1>  Mensaje:  </h1>
+        <p><input id="input-original" spellcheck="false" type="text" placeholder="Ingrese el texto" name="text"/></p>
+        <h2>Desplazamiento</h2>
+        <p><input id="desplazamiento" type="number" size="4" placeholder="Indica N° de posición"/></p>
+        <p><button type="button" id="cifrar">Cifrar</button>     
+        <button type="button" id="descifrar">Descifrar</button> </p> 
+        <h2>Mensaje cifrado/descifrado:</h2>
+        <p><input id="input-segundo" type="text" placeholder="Aquí aparecerá tu mensaje"/></p>
     </main>
-    <div id="img">
-    <img style="border-radius: 10px;" src="https://i.ibb.co/cyZVtMd/Dise-o-sin-t-tulo-2.jpg" width="280" height="190">
-    </div>
+
+
     <nav>
-        <h4><b>¿Qué es el cifrado César?</b></h4>
+        <h4><b>¿Qué es el código César?</b></h4>
         <p>
             Es una de las técnicas de cifrado más simples y más usadas. Es un tipo de cifrado por sustitución en el que una letra en el texto original es reemplazada por otra letra que se encuentra un número fijo de posiciones más adelante en el alfabeto.
         </p>
-    </nav> 
+    </nav>
     <section>
         <h4><b>¿Cuáles son sus ventajas?</b></h4>
         <p>
             Uno de los métodos más fáciles de usar en criptografía y puede proporcionar una seguridad mínima a la información. Uso de solo una tecla breve en todo el proceso. Uno de los mejores métodos para usar si el sistema no puede usar ninguna técnica de codificación complicada.
         </p>
     </section>
-    <audio controls autoplay>
-        <source src="assets/audio/musica.mp3" type="audio/mp3">
-      </audio>
-      <script src="assets/js/index.js" type="text/javascript" defer></script>
+    <script src="assets/js/index.js" type="text/javascript" defer></script>
 </body>
 </html>
